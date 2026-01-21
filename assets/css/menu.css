@@ -6,13 +6,13 @@
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: greenyellow;
+    background-color: rgb(255, 255, 255);
 }
 
 .navbar{
     position: sticky; /*Trabaja en conjunto con top sin el no funciona*/
     box-shadow: 0 2px 4px black;
-    background-color: peru;
+    background-color: rgb(63, 77, 205);
     top: 0%; 
     z-index: 100px;
 }
