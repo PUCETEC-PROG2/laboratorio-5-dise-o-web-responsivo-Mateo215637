@@ -12,7 +12,7 @@
 .navbar{
     position: sticky; /*Trabaja en conjunto con top sin el no funciona*/
     box-shadow: 0 2px 4px black;
-    background-color: rgb(63, 77, 205);
+    background: linear-gradient(rgb(36, 36, 158), cyan);
     top: 0%; 
     z-index: 100px;
 }
@@ -34,6 +34,7 @@
 }
 .nav-logo img {
     width: 100px;
+    border-radius: 30px;
 
 }
 .nav-link {

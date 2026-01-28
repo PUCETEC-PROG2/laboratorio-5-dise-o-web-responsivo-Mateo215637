@@ -4,62 +4,61 @@
     max-width: 1200px;
     margin: auto;
     padding: 32px;
+    background-color: transparent;
+}
+
+body {
+    background-color: #0a0a0a; 
+    padding: 0%;
+    font-family: sans-serif; 
 }
 
 .new-trainers-grid {
-    /* Usé flex porque es lo más cómodo para que las cartas 
-       se acomoden solas una al lado de la otra. */
+    /* Usé flex porque es lo más cómodo para que las cartas se acomoden solas una al lado de la otra. */
     display: flex;
-    /* Activé wrap para que, si no caben en una fila, bajen a la siguiente. */
+    /* Activé wrap para que si no caben en una fila, bajen a la siguiente. */
     flex-wrap: wrap;
-    /* Bajé el espacio gap a 2rem para que las cartas tengan aire 
-       pero no estén tan separadas que se desperdicie pantalla. */
+    /* Bajé el espacio gap a 2rem para que las cartas tengan aire  pero no estén tan separadas que se desperdicie pantalla. */
     gap: 2rem; 
     justify-content: center;
 }
 
 .new-trainer-card {
-    background-color: aqua;
-    border-radius: 12px;
-    /*  Usé rgba con 0.2 de opacidad para que la sombra sea sutil y no un manchón negro. */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-    /* Puse overflow hidden para que si la imagen es muy grande, 
-       no se salga de las esquinas redondeadas de la carta. */
+    background-color: #1a1d23;
+    border: 1px solid #374151;
+    border-radius: 15px;
+    /* Usé rgba con 0.5 de opacidad para que la sombra sea sutil y no un manchón negro. */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    /* Puse overflow hidden para que si la imagen es muy grande,  no se salga de las esquinas redondeadas de la carta. */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     /* Configuré el ancho base en 280px. asi si la pantalla es pequeña las cartas se mantienen de un tamaño legible. */
     flex: 1 1 280px;  
-    /* Puse un máximo de 350px para que en monitores grandes la carta 
-       no se vuelva gigante y deforme al personaje. */
+    /* Puse un máximo de 350px para que en monitores grandes la carta  no se vuelva gigante y deforme al personaje. */
     max-width: 350px;
-    /* Agregué esta transición para que cuando pase el mouse (hover), 
-       el movimiento se sienta suave y no de golpe. */
-    transition: transform 0.3s ease;
+    /* Transición para que cuando pase el mouse hover el movimiento se sienta suave y no de golpe. */
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .new-trainer-card:hover {
-    /* Hice que la carta flote un poquito hacia arriba (5px) 
-       cuando pones el mouse encima. */
+    /* Hice que la carta flote un poquito hacia arriba.*/
     transform: translateY(-5px); 
+    border-color: #f5d104; /* Solo añadimos un cambio de color al borde al pasar el mouse */
 }
 
 .new-trainer-image {
     width: 100%;
-    /* Aumenté la altura a 250px porque en 100px tus entrenadores 
-       se veían cortados por la mitad; ahora se ven más imponentes. */
     height: 250px; 
-    /* Cambié a cover ya que hace que la foto llene todo el recuadro 
-       sin estirarse feo aunque corte un poquito los bordes. */
+    /* Cover ya que hace que la foto llene todo el recuadro sin estirarse feo aunque corte un poquito los bordes. */
     object-fit: cover; 
-    /* Mantuve el degradado porque combina perfecto con los colores de Pokémon. */
     background: linear-gradient(135deg, #f5d104, #004fec);
 }
 
 .new-trainer-info {
     padding: 15px;
     display: flex;
-    /* Cambié esto a column para asegurar que el nombre la región y las medallas siempre estén uno debajo del otro. */
+    /* Column para asegurar que el nombre la región y las medallas siempre estén uno debajo del otro. */
     flex-direction: column; 
     gap: 5px;
     align-items: center;
@@ -71,13 +70,38 @@
        lo primero que el usuario lea al ver la carta. */
     font-size: 18px; 
     font-weight: bold;
-    color: #000;
+    color: white; /* Cambiado a blanco para que resalte con el degradado */
     text-transform: uppercase;
-    /* Mantuve el overline porque le da ese estilo único. */
+    /* Overline porque le da ese estilo único. */
     text-decoration: overline;
-    /* Añadí un margen abajo para que el nombre no esté pegado a los datos de la región. */
+    /* Margen abajo para que el nombre no esté pegado a los datos de la región. */
     margin-bottom: 10px;
-  }
+    background: linear-gradient(45deg, #00ced1, #ffd700); 
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-block; /* Para que el fondo no ocupe todo el ancho */
+}
+
+.new-trainer-region {
+    background-color: #ffffff;
+    border-radius: 50px;
+    color: black;
+    width: 80%; /* Para que se vea como una cápsula centrada */
+    margin: 2px 0;
+}
+
+.new-trainer-badges, .new-trainer-status {
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-active, .status-champion {
+    font-weight: bold;
+    color: #f5d104; 
+}
+
+
 @media screen and (max-whidth: 900px) {
     .new-trainers-grid {
         width: 100%;
